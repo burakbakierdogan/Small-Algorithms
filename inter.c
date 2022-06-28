@@ -86,7 +86,9 @@ int	main(int ac, char *argv[])
 	total = 0;
 
 
-		while (index >= 0)
+	if (ac == 3)
+	{
+			while (index >= 0)
 		{
 			if (ft_compare(argv[1], argv[1][index], index) == 0)
 				{
@@ -97,6 +99,17 @@ int	main(int ac, char *argv[])
 			index--;
 		}
 	ft_strrev(str, total);
-	printf("%s", str + 1);
-	write (1, "\n", 1);
+	index = 0;
+	int k = ft_strlen(argv[2]);
+	while (total)
+	{
+		if (ft_compare(argv[2], str[index], k))
+		{
+			write(1, &str[index], 1);
+		}
+		index++;
+		total--;
+	}
+	}
+	write(1, "\n", 1);
 }
