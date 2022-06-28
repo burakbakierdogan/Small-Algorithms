@@ -34,9 +34,28 @@ int	ft_strlen(char *s)
 	index = 0;
 	while (s[index] != '\0')
 		index++;
-	if (index)
-		index -= 1;
 	return (index);
+}
+void	ft_strrev(char *s1, int size)
+{
+	char	temp[size];
+	int		total;
+
+
+	int index = 0;
+	total = size;
+	while (size >= 0)
+	{
+		temp[index] = s1[size];
+		index++;
+		size--;
+	}
+	index = 0;
+	while (index < total + 1 )
+	{
+		s1[index] = temp[index];
+		index++;
+	}
 }
 int	ft_compare(char *s1, char s2, int size)
 {
@@ -60,19 +79,24 @@ int	main(int ac, char *argv[])
 	char	str[ft_strlen(argv[1]) + ft_strlen(argv[2])];
 	int		index;
 	int		index2;
+	int		total;
 
 	index = ft_strlen(argv[1]);
 	index2 = 0;
+	total = 0;
 
 
 		while (index >= 0)
 		{
-			if (ft_compare(argv[1], argv[1][index], (index)) == 0)
-				str[index2++] = argv[1][index];
+			if (ft_compare(argv[1], argv[1][index], index) == 0)
+				{
+					str[index2] = argv[1][index];
+					index2++;
+					total++;
+				}
 			index--;
 		}
-
-	str[index2] = '\0';
-	printf("%s", str);
+	ft_strrev(str, total);
+	printf("%s", str + 1);
 	write (1, "\n", 1);
 }
