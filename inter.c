@@ -57,6 +57,7 @@ void	ft_strrev(char *s1, int size)
 		index++;
 	}
 }
+
 int	ft_compare(char *s1, char s2, int size)
 {
 	int	index;
@@ -73,7 +74,6 @@ int	ft_compare(char *s1, char s2, int size)
 	return (total);
 }
 
-
 int	main(int ac, char *argv[])
 {
 	char	str[ft_strlen(argv[1]) + ft_strlen(argv[2])];
@@ -88,7 +88,7 @@ int	main(int ac, char *argv[])
 
 	if (ac == 3)
 	{
-			while (index >= 0)
+		while (index >= 0)
 		{
 			if (ft_compare(argv[1], argv[1][index], index) == 0)
 				{
@@ -98,18 +98,16 @@ int	main(int ac, char *argv[])
 				}
 			index--;
 		}
-	ft_strrev(str, total);
-	index = 0;
-	int k = ft_strlen(argv[2]);
-	while (total)
-	{
-		if (ft_compare(argv[2], str[index], k))
+		ft_strrev(str, total);
+		index = 0;
+		int k = ft_strlen(argv[2]);
+		while (total)
 		{
-			write(1, &str[index], 1);
+			if (ft_compare(argv[2], str[index], k))
+				write(1, &str[index], 1);
+			index++;
+			total--;
 		}
-		index++;
-		total--;
-	}
 	}
 	write(1, "\n", 1);
 }
