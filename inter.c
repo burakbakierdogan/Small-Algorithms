@@ -34,6 +34,8 @@ int	ft_strlen(char *s)
 	index = 0;
 	while (s[index] != '\0')
 		index++;
+	if (index)
+		index -= 1;
 	return (index);
 }
 int	ft_compare(char *s1, char s2, int size)
@@ -65,11 +67,8 @@ int	main(int ac, char *argv[])
 
 		while (index >= 0)
 		{
-			if (ft_compare(argv[1], argv[1][index -1], (index - 1)) == 0)
-			{
-				str[index2] = str[index];
-				index2++;
-			}
+			if (ft_compare(argv[1], argv[1][index], (index)) == 0)
+				str[index2++] = argv[1][index];
 			index--;
 		}
 
