@@ -22,6 +22,7 @@ int	ft_atoi_base(const char *str, int str_base);
 */
 
 #include <stdio.h>
+#include <limits.h>
 
 char ft_c_convert(char c)
 {
@@ -159,11 +160,13 @@ int	ft_atoi_base(const char *str, int str_base)
 	{
 		sum += ft_int_convert(ptr[index2--]) * b;
 		b *= str_base;
+		if (sum > INT_MAX || sum < 0)
+			return (-1);
 	}
 	return (sum * sign);
 }
 
 int main(void) //main function for the testing!//
 {
-	printf("%d\n",ft_atoi_base("ABCDEF121", 16));
+	printf("%d\n",ft_atoi_base("ABCDEF", 16));
 }
