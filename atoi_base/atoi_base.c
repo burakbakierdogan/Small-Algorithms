@@ -58,7 +58,7 @@ int	ft_int_convert(char c)
 		return (14);
 	if (c == 'F')
 		return (15);
-	return (c);
+	return (0);
 }
 
 int	ft_isdigit(char c, int str_base)
@@ -134,7 +134,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	int		index2;
 	int		sign;
 	int		sum;
-	char	ptr[20];
+	char	ptr[40];
 	int		b;
 
 	index = 0;
@@ -142,6 +142,8 @@ int	ft_atoi_base(const char *str, int str_base)
 	index2 = 0;
 	sum = 0;
 	b = 1;
+	if (str_base <= 1)
+		return (0);
 	while (str[index] <= 32)
 		index++;
 	if (str[index] == '-' || str[index] == '+')
@@ -150,7 +152,7 @@ int	ft_atoi_base(const char *str, int str_base)
 			sign = -1;
 		index++;
 	}
-	while (ft_isdigit(str[index], str_base))
+	while (ft_isdigit(str[index], str_base) && str[index])
 		ptr[index2++] = str[index++];
 	index2--;
 	while (index2 >= 0)
@@ -161,7 +163,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	return (sum * sign);
 }
 
-int main()
+int main(void) //main function for the testing!//
 {
-	printf("%d\n",ft_atoi_base("     1232434abf", 11));
+	printf("%d\n",ft_atoi_base("ABCDEF121", 16));
 }
