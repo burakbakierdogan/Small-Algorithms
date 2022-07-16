@@ -168,5 +168,5 @@ int	ft_atoi_base(const char *str, int str_base)
 
 int main(void) //main function for the testing!//
 {
-	printf("%d\n",ft_atoi_base("ABCDEF", 16));
+	printf("%d\n",ft_atoi_base("   -233AB", 16));
 }
