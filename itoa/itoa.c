@@ -73,6 +73,6 @@ char	*ft_itoa(int nbr)
 
 int main (void) // for test purpose
 {
-	int a = INT_MAX;
-	printf("%s\n", ft_itoa(-1121233312));
+	int a = INT_MAX; // to get the max int number
+	printf("%s\n", ft_itoa(a));
 }
