@@ -120,7 +120,6 @@ int main (int ac, char *argv[])
 			if ((nbr % 16) > 9)
 				str[len] = (nbr % 16) - 10 + 97;
 			len--;
-
 			nbr = nbr / 16;
 		}
 		if (nbr < 16)
