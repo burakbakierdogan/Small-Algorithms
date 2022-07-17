@@ -87,5 +87,5 @@ char	*ft_itoa_base(int value, int base)
 
 int main (void) // for test purpose
 {
-	printf("%s\n", ft_itoa_base(255, 16));
+	printf("%s\n", ft_itoa_base(3, 12));
 }
