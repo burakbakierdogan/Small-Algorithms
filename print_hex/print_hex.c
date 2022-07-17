@@ -120,16 +120,15 @@ int main (int ac, char *argv[])
 			if ((nbr % 16) > 9)
 				str[len] = (nbr % 16) - 10 + 97;
 			len--;
-			if (nbr < 16)
-				break;
+
 			nbr = nbr / 16;
 		}
 		if (nbr < 16)
 		{
-		if (nbr < 10)
+			if (nbr < 10)
 			str[len] = 48 + nbr;
-		else
-		str[len] = 97 + (nbr - 10);
+			else
+			str[len] = 97 + (nbr - 10);
 		}
 		while (len < index)
 		write(1, &str[len++], 1);
