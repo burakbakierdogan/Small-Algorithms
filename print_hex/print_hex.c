@@ -113,7 +113,7 @@ int main (int ac, char *argv[])
 		index = len;
 		str[len] = '\0';
 		len--;
-		while (len >= 0 && nbr >= 15)
+		while (len >= 0 && nbr > 15)
 		{
 
 			str[len] = (nbr % 16) + 48;
