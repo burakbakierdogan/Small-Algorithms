@@ -22,12 +22,12 @@ int	ft_len(int nbr)
 	int	number;
 
 	index = 0;
+	number = nbr;
 	if (nbr < 0)
 	{
 		number = nbr * -1;
 		index++;
 	}
-	number = nbr;
 	while (number)
 	{
 		number /= 10;
@@ -62,7 +62,7 @@ char	*ft_itoa(int nbr)
 		return ("0");
 	if (nbr < 0)
 		number = nbr * -1;
-	str = (char *) malloc (len * sizeof(char));
+	str = (char *) malloc ((len + 1 ) * sizeof(char));
 	str[len] = '\0';
 	len--;
 	str = ft_putnbr(str, len, number);
@@ -74,5 +74,5 @@ char	*ft_itoa(int nbr)
 int main (void) // for test purpose
 {
 	int a = INT_MAX; // to get the max int number
-	printf("%s\n", ft_itoa(a));
+	printf("%s\n", ft_itoa(10));
 }
