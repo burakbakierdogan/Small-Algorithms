@@ -125,13 +125,13 @@ int main (int ac, char *argv[])
 			nbr = nbr / 16;
 		}
 		if (nbr < 16)
-	{
+		{
 		if (nbr < 10)
 			str[len] = 48 + nbr;
 		else
 		str[len] = 97 + (nbr - 10);
-	}
-	while (len < index)
+		}
+		while (len < index)
 		write(1, &str[len++], 1);
 	}
 	write (1, "\n", 1);
