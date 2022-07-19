@@ -73,7 +73,7 @@ int	main(int ac, char *argv[])
 	{
 		while (index < ac)
 		{
-			while (argv[index][index2] == ' ')
+			while (argv[index][index2] == ' ' || argv[index][index2] == '\t' )
 				write (1, &argv[index][index2++], 1);
 			if (ft_isletter(argv[index][index2]))
 			{
@@ -82,14 +82,14 @@ int	main(int ac, char *argv[])
 				else
 					write(1, &argv[index][index2++], 1);
 			}
-			while (argv[index][index2] && argv[index][index2] != ' ')
+			while (argv[index][index2] && (argv[index][index2] != ' ' || argv[index][index2] != '\t'))
 			{
 				if (ft_isupper(argv[index][index2]) && ft_isletter(argv[index][index2]))
 					ft_decapitalize(argv[index][index2++]);
-				else if (argv[index][index2] != ' ')
+				else if (argv[index][index2] != ' ' || argv[index][index2] != '\t')
 					write (1, &argv[index][index2++], 1);
 
-				while (argv[index][index2] == ' ' && argv[index][index2])
+				while ((argv[index][index2] == ' ' || argv[index][index2] == '\t') && argv[index][index2])
 				{
 					write (1, &argv[index][index2++], 1);
 					if (ft_isletter(argv[index][index2]) && ft_islower(argv[index][index2]))
