@@ -44,6 +44,7 @@ int	ft_is_prime(int c)
 	}
 	return (1);
 }
+
 void	ft_itoa(int nbr)
 {
 
@@ -56,6 +57,7 @@ void	ft_itoa(int nbr)
 	ft_itoa(nbr / 10);
 	ft_itoa(nbr % 10);
 }
+
 int	ft_atoi(char *str)
 {
 	int	index;
