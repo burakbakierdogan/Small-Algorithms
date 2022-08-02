@@ -26,8 +26,9 @@ $>
 */
 
 #include <unistd.h>
+#include <stdio.h>
 
-int	ft_is_prime(int c)
+int	ft_is_prime(long long int c)
 {
 	int	index;
 
@@ -45,7 +46,7 @@ int	ft_is_prime(int c)
 	return (1);
 }
 
-void	ft_itoa(int nbr)
+void	ft_itoa(long long int nbr)
 {
 
 	if (nbr < 10)
@@ -61,7 +62,7 @@ void	ft_itoa(int nbr)
 int	ft_atoi(char *str)
 {
 	int	index;
-	int	sum;
+	long long int	sum;
 	int	base;
 
 	sum = 0;
@@ -82,7 +83,7 @@ int main(int ac, char *argv[])
 {
 	int	nbr;
 	int	index;
-	int	sum;
+	long long int	sum;
 
 	index = 2;
 	if (ac == 2)
