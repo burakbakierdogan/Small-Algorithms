@@ -1,4 +1,6 @@
 /*
+
+
 Assignment name  : ft_atoi_base
 Expected files   : ft_atoi_base.c
 Allowed functions: None
@@ -19,6 +21,8 @@ string.
 Your function must be declared as follows:
 
 int	ft_atoi_base(const char *str, int str_base);
+
+
 */
 
 #include <stdio.h>
