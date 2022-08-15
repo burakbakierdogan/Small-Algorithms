@@ -3,33 +3,25 @@
 
 typedef struct list
 {
-	struct list *next;
-	int nbr;
-}t_list;
+	struct list	*next;
+	int 		nbr;
+}				t_list;
 
+t_list *ft_new(int nbr1)
+{
+	t_list new = malloc (sizeof(t_list));
+	t_list -> nbr = nbr1;
+	new -> next NULL;
+	return (new);
+}
 
 int main (void)
 {
-	t_list *burak;
-	t_list *baki;
-	t_list *erdogan;
+	t_list *head;
+	t_list *tmp;
+	tmp = ft_new(42);
+	head = tmp;
+	tmp = ft_new(33);
 
-	burak = malloc (sizeof (t_list));
-	baki = malloc (sizeof (t_list));
-	erdogan = malloc (sizeof (t_list));
-	burak -> next = baki;
-	baki -> next = erdogan;
-	baki -> next -> nbr = 3;
-	burak -> nbr = 45;
-	burak -> next -> nbr = 98;
-	printf("%d-%d-%d\n",burak->nbr,baki->nbr, erdogan -> nbr);
-
-
+	n1 = malloc(sizeof(t_list));
 }
-/*
-typedef struct    s_list
-{
-    struct s_list *next;
-    void          *data;
-}                 t_list;
-*/
