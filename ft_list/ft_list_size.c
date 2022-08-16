@@ -25,10 +25,15 @@ typedef struct    s_list
 
 int	ft_list_size(t_list *begin_list)
 {
-	int	total;
+	t_list	*ptr;
+	int		index;
 
-	total = 0;
-	while (*begin_list != NULL)
-		total++;
-	return (total);
+	index = 0;
+	ptr = begin_list;
+	while (ptr)
+	{
+		index++;
+		ptr = ptr -> next;
+	}
+	return (index);
 }
